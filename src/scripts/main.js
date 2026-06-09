@@ -363,11 +363,19 @@ for (const person of people) {
   const age = person.died - person.born;
   const century = Math.ceil(person.died / 100);
 
+  let gender = '';
+
+  if (person.sex === 'm') {
+    gender = 'Male';
+  } else {
+    gender = 'Female';
+  }
+
   const row = document.createElement('tr');
 
   row.innerHTML = `
   <td>${person.name}</td>
-  <td>${person.sex}</td>
+  <td>${gender}</td>
   <td>${person.born}</td>
   <td>${person.died}</td>
   <td>${age}</td>
